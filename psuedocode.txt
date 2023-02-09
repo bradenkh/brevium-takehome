@@ -1,0 +1,15 @@
+create schedule, appointment, and appointment requests
+get initial schedule and populate a new schedule object
+While response is not 204 (do-while maybe)
+    get appointment request from endpoint and add to list
+
+Sort the list by order of appointment difficulty which is a measure of how many
+    possible slots there are for that person
+    dificulty calculation:
+    if new, days * (2 - open slots for that day) * num of pref doctors
+    else, days * (8 - open slots for that day) * num of pref doctors
+
+loop through the sorted list and start to make appts on sched obj
+
+when done, do api call for all new appts on sched obj
+
